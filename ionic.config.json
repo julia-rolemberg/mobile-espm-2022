@@ -1,0 +1,7 @@
+{
+  "name": "alo-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
