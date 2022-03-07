@@ -1,4 +1,26 @@
-<p>{{numero}}</p>
-<p>
-<ion-button (click)="executarIncremento()">Incrementar</ion-button>
-</p>
+
+<ion-grid>
+<ion-row>
+    <ion-col size="12" justify-content="center">
+        {{numero}}
+    </ion-col>
+</ion-row>
+
+<ion-row>
+    <ion-col size="12" justify-content="center">
+        <p>
+            <ion-button (click)="executarIncremento()">Incrementar</ion-button>
+        </p>
+    </ion-col>
+</ion-row>
+
+<ion-row>
+    <ion-label>Valor: </ion-label>
+    <ion-input></ion-input>
+    <ion-button>
+        <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-button>
+</ion-row>
+
+
+</ion-grid>

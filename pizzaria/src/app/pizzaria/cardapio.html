@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>Cardápio</ion-title>
+    </ion-toolbar>
+    </ion-header>
+
+<ion-content [fullscreen]="true">
+
+<ion-list>
+<ion-header>
+    <ion-label>Selecione a pizza</ion-label>
+</ion-header>
+
+<ion-item *ngFor="let p of cardapio.pizzas">
+
+    <ion-avatar slot="start">
+        <img src="https://raw.githubusercontent.com/esensato/mobile-2022-01/main/img/pizza-{{p.id}}.jpg" />
+    </ion-avatar>
+
+
+    <ion-label>
+        <h2>{{p.nome}}</h2>
+        <h3>{{p.preco}}</h3>
+    </ion-label>
+</ion-item>
+
+</ion-list>
+
+</ion-content>
+    
