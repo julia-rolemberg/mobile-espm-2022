@@ -6,12 +6,12 @@
 
 <ion-content [fullscreen]="true">
 
-<ion-list>
+<ion-list [hidden]=ocultarPizzas>
 <ion-header>
     <ion-label>Selecione a pizza</ion-label>
 </ion-header>
 
-<ion-item *ngFor="let p of cardapio.pizzas">
+<ion-item *ngFor="let p of cardapio.pizzas" button (click)="selPizza(p)">
 
     <ion-avatar slot="start">
         <img src="https://raw.githubusercontent.com/esensato/mobile-2022-01/main/img/pizza-{{p.id}}.jpg" />
@@ -25,6 +25,27 @@
 </ion-item>
 
 </ion-list>
+
+
+<ion-list [hidden]=!ocultarPizzas>
+    <ion-header>
+        <ion-label>Selecione a bebida</ion-label>
+    </ion-header>
+    
+    <ion-item *ngFor="let b of cardapio.bebidas" button (click)="selBebida(b)">
+    
+        <ion-avatar slot="start">
+            <img src="https://raw.githubusercontent.com/esensato/mobile-2022-01/main/img/bebida-{{b.id}}.jpg" />
+        </ion-avatar>
+    
+    
+        <ion-label>
+            <h2>{{b.nome}}</h2>
+            <h3>{{b.preco}}</h3>
+        </ion-label>
+    </ion-item>
+    
+    </ion-list>
 
 </ion-content>
     
