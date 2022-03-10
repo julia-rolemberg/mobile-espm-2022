@@ -3,12 +3,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'cardapio',
+    path: 'pizzaria',
     loadChildren: () => import('./pizzaria/pizzaria.module').then( m => m.PizzariaModule)
   },
   {
     path: '',
-    redirectTo: 'cardapio',
+    redirectTo: 'pizzaria/cardapio',
     pathMatch: 'full'
   },
 ];

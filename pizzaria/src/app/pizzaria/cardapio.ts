@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NavigationExtras, Router } from '@angular/router';
 
 const URL = 'https://raw.githubusercontent.com/esensato/mobile-2022-01/main/services/lista-pizza.json'
 
@@ -16,7 +17,7 @@ export class Cardapio implements OnInit {
     bebidaSelecionada:any;
     ocultarPizzas=false;
 
-    constructor(private http: HttpClient){}
+    constructor(private router: Router, private http: HttpClient){}
 
     ngOnInit() {
 
@@ -31,6 +32,13 @@ export class Cardapio implements OnInit {
      }
      selBebida(bebida){
          this.bebidaSelecionada = bebida;
+         let navigationExtras: NavigationExtras = {
+            state: {
+                pizzaSelecionada: this.pizzaSelecionada,
+                bebidaSelecionada: this.bebidaSelecionada
+            }
+            };
+            this.router.navigate(['pizzaria/pedido'], navigationExtras);
      }
 
 }
