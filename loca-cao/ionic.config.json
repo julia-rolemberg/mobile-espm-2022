@@ -1,0 +1,7 @@
+{
+  "name": "loca-cao",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
