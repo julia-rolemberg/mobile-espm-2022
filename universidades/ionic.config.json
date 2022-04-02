@@ -1,0 +1,7 @@
+{
+  "name": "universidades",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
