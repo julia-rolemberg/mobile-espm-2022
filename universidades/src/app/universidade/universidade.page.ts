@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   UniversidadeRes,
   parseUniversidade,
@@ -20,7 +20,8 @@ export class UniversidadePage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient 
+    private http: HttpClient ,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -38,10 +39,12 @@ export class UniversidadePage implements OnInit {
       }
     });
 
-    this.requestData();
+    this.requestDadosUniversidades();
   }
 
-  requestData() {
+
+
+  requestDadosUniversidades() {
     const queryParams =
       this.params.length > 1 ? this.params.join('&') : this.params[0];
     const searchUrl = URL + '/search?' + queryParams;
@@ -52,5 +55,9 @@ export class UniversidadePage implements OnInit {
       console.log(searchUrl);
       
     });
+  }
+  
+  voltar() {
+    this.router.navigate(['home']);
   }
 }

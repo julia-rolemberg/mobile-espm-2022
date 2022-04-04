@@ -1,9 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>universidade</ion-title>
+    <ion-title>Buscando...</ion-title>
+    <ion-button  color="primary"  (click)="voltar()">Voltar</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor="let uni of universidades">
+      <div id="container">
+        <ion-label>{{uni.name}}</ion-label>
+        <ion-label>País: {{uni.country}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>
