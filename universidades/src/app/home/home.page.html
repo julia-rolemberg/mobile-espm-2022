@@ -15,9 +15,9 @@
 
   <div id="container">
     <ion-label>Informe a universidade: </ion-label>
-    <ion-input placeholder="universidade" type="text"></ion-input>
+    <ion-input placeholder="universidade" type="text" (change)="this.setName($event.target.value)"></ion-input>
     <ion-label>Informe o país: </ion-label>
-    <ion-input placeholder="país"></ion-input>
+    <ion-input placeholder="país"  (change)="this.setCountry($event.target.value)"></ion-input>
     <ion-button color="primary"  (click)="sendRequest()">Search</ion-button>
 
 
